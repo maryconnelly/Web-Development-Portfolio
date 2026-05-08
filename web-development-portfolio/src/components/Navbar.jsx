@@ -2,8 +2,8 @@ import * as NavigationMenu from '@radix-ui/react-navigation-menu'
 
 function Navbar() {
   return (
-    <NavigationMenu.Root className="w-full bg-black text-white p-4">
-      <NavigationMenu.List className="flex gap-6">
+    <NavigationMenu.Root className="w-full bg-white text-black p-4 sticky top-0 z-50 shadow-sm">
+      <NavigationMenu.List className="flex gap-6 justify-end">
         <NavigationMenu.Item>
           <NavigationMenu.Link href="/">
             Home
