@@ -2,6 +2,15 @@ import Navbar from './components/Navbar'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
 
+const projects = [
+  { id: 1, title: 'Project One', description: 'Short description of the project.', link: '#' },
+  { id: 2, title: 'Project Two', description: 'Short description of the project.', link: '#' },
+  { id: 3, title: 'Project Three', description: 'Short description of the project.', link: '#' },
+  { id: 4, title: 'Project Four', description: 'Short description of the project.', link: '#' },
+  { id: 5, title: 'Project Five', description: 'Short description of the project.', link: '#' },
+  { id: 6, title: 'Project Six', description: 'Short description of the project.', link: '#' },
+]
+
 function App() {
   return (
     <>
@@ -17,9 +26,20 @@ function App() {
         <p className="text-[#2C2C2C] max-w-xl opacity-70">A little bit about me — my background, skills, and what I love to build.</p>
       </section>
 
-      <section id="projects" className="min-h-screen flex flex-col items-center justify-center text-center px-8 bg-[#FAFAF7]">
-        <h2 className="text-3xl font-bold mb-4 text-[#2C2C2C]">Projects</h2>
-        <p className="text-[#2C2C2C] max-w-xl opacity-70">A showcase of things I've built.</p>
+      <section id="projects" className="py-24 px-8 bg-[#FAFAF7]">
+        <h2 className="text-3xl font-bold mb-4 text-[#2C2C2C] text-center">Projects</h2>
+        <p className="text-[#2C2C2C] opacity-70 text-center mb-12">A showcase of things I've built.</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {projects.map((project) => (
+            <a key={project.id} href={project.link} className="group rounded-xl overflow-hidden border border-[#e0dfd8] hover:shadow-lg transition-shadow bg-[#F0EFE9]">
+              <div className="w-full h-48 bg-[#d9d8d1]" />
+              <div className="p-4 text-left">
+                <h3 className="text-lg font-semibold text-[#2C2C2C] group-hover:text-[#3D7A5E] transition-colors">{project.title}</h3>
+                <p className="text-sm text-[#2C2C2C] opacity-60 mt-1">{project.description}</p>
+              </div>
+            </a>
+          ))}
+        </div>
       </section>
 
       <section id="contact" className="min-h-screen flex flex-col items-center justify-center text-center px-8 bg-[#F0EFE9]">
